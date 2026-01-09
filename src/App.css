@@ -176,7 +176,7 @@ main {
 .animated-role-wrapper {
   display: inline-block;
   position: relative;
-  min-width: 220px;
+  min-width: 140px;
   text-align: left;
   height: 2.5rem;
   vertical-align: middle;
