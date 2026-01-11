@@ -1,5 +1,19 @@
 import { useRef, useMemo } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { 
+  SiReact, 
+  SiJavascript, 
+  SiNextdotjs, 
+  SiPhp, 
+  SiMysql, 
+  SiHtml5, 
+  SiCss3,
+  SiVuedotjs, 
+  SiRust, 
+  SiMongodb, 
+  SiEthereum 
+} from 'react-icons/si'
+import { FaCode } from 'react-icons/fa'
 import '../App.css'
 
 export default function Skills() {
@@ -19,77 +33,90 @@ export default function Skills() {
     { 
       id: 1,
       name: 'React', 
-      icon: 'bi-code-slash', 
+      icon: SiReact,
+      iconColor: '#61DAFB',
       category: 'Frontend',
       description: 'Component-based library for building user interfaces'
     },
     { 
       id: 2,
       name: 'JavaScript', 
-      icon: 'bi-filetype-js', 
+      icon: SiJavascript,
+      iconColor: '#F7DF1E',
       category: 'Language',
       description: 'Programming language for web development'
     },
     { 
       id: 3,
       name: 'Next.js', 
-      icon: 'bi-filetype-jsx', 
+      icon: SiNextdotjs,
+      iconColor: '#000000',
       category: 'Frontend',
       description: 'React framework for production-ready applications'
     },
     { 
       id: 4,
       name: 'PHP', 
-      icon: 'bi-filetype-php', 
+      icon: SiPhp,
+      iconColor: '#777BB4',
       category: 'Backend',
       description: 'Server-side scripting language'
     },
     { 
       id: 5,
       name: 'MySQL', 
-      icon: 'bi-database', 
+      icon: SiMysql,
+      iconColor: '#4479A1',
       category: 'Database',
       description: 'Relational database management system'
     },
     { 
       id: 6,
       name: 'HTML & CSS', 
-      icon: 'bi-filetype-html', 
+      icon: SiHtml5,
+      iconColor: '#E34F26',
       category: 'Frontend',
-      description: 'Markup and styling languages for web pages'
+      description: 'Markup and styling languages for web pages',
+      secondaryIcon: SiCss3,
+      secondaryIconColor: '#1572B6'
     },
     { 
       id: 7,
       name: 'Vue', 
-      icon: 'bi-window', 
+      icon: SiVuedotjs,
+      iconColor: '#4FC08D',
       category: 'Frontend',
       description: 'Progressive JavaScript framework for building user interfaces'
     },
     { 
       id: 8,
       name: 'Rust', 
-      icon: 'bi-gear-fill', 
+      icon: SiRust,
+      iconColor: '#000000',
       category: 'Language',
       description: 'Systems programming language focused on safety and performance'
     },
     { 
       id: 9,
       name: 'Motoko', 
-      icon: 'bi-terminal', 
+      icon: FaCode,
+      iconColor: '#2563eb',
       category: 'Language',
       description: 'Programming language for Internet Computer blockchain development'
     },
     { 
       id: 10,
       name: 'MongoDB', 
-      icon: 'bi-database-fill', 
+      icon: SiMongodb,
+      iconColor: '#47A248',
       category: 'Database',
       description: 'NoSQL document database for modern applications'
     },
     { 
       id: 11,
       name: 'Ethereum', 
-      icon: 'bi-circle-fill', 
+      icon: SiEthereum,
+      iconColor: '#627EEA',
       category: 'Blockchain',
       description: 'Decentralized blockchain platform for smart contracts'
     }
@@ -130,6 +157,9 @@ export default function Skills() {
   }
 
   const TechCard = ({ tech, isEven, index }) => {
+    const IconComponent = tech.icon
+    const SecondaryIconComponent = tech.secondaryIcon
+    
     const cardAnimations = {
       hidden: { opacity: 0, x: isEven ? -50 : 50 },
       visible: { 
@@ -186,7 +216,8 @@ export default function Skills() {
             }`}
             style={{ 
               borderTop: `4px solid ${themeColor}`,
-              width: '280px'
+              width: '280px',
+              backgroundColor: '#ffffff'
             }}
             initial="hidden"
             whileInView="visible"
@@ -201,11 +232,36 @@ export default function Skills() {
             <div className="p-4">
               <div className="d-flex align-items-center gap-3 mb-3">
                 <motion.div
-                  className="rounded-circle p-3 d-flex align-items-center justify-content-center tech-icon-wrapper"
-                  style={{ background: themeColorTransparent }}
+                  className="rounded-circle d-flex align-items-center justify-content-center tech-icon-wrapper"
                   whileHover={{ rotate: 10, scale: 1.1 }}
+                  style={{ 
+                    padding: tech.secondaryIcon ? '0.5rem' : undefined,
+                    gap: tech.secondaryIcon ? '0.15rem' : undefined,
+                    borderRadius: tech.secondaryIcon ? '0.5rem' : '50%',
+                    width: tech.secondaryIcon ? 'auto' : '48px',
+                    minWidth: tech.secondaryIcon ? '56px' : '48px'
+                  }}
                 >
-                  <i className={`bi ${tech.icon} fs-4`} style={{ color: themeColor }} />
+                  {IconComponent && (
+                    <IconComponent 
+                      style={{ 
+                        color: tech.iconColor || themeColor, 
+                        fontSize: '1.25rem',
+                        width: '1.25rem',
+                        height: '1.25rem'
+                      }} 
+                    />
+                  )}
+                  {SecondaryIconComponent && (
+                    <SecondaryIconComponent 
+                      style={{ 
+                        color: tech.secondaryIconColor || themeColor, 
+                        fontSize: '1.25rem',
+                        width: '1.25rem',
+                        height: '1.25rem'
+                      }} 
+                    />
+                  )}
                 </motion.div>
                 <h3 className="h5 fw-bold text-dark mb-0">{tech.name}</h3>
               </div>
@@ -228,13 +284,13 @@ export default function Skills() {
   }
 
   return (
-    <main style={{ paddingTop: '80px' }}>
+    <main style={{ paddingTop: '80px', backgroundColor: '#ffffff' }}>
       <section 
         ref={scrollRef} 
         className="py-5 skills-section position-relative"
-        style={{ minHeight: '100vh' }}
+        style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}
       >
-        <div className="container position-relative">
+        <div className="container position-relative" style={{ zIndex: 1 }}>
           <motion.div 
             className="text-center mx-auto mb-5"
             style={{ maxWidth: '600px' }}
