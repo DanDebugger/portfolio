@@ -134,7 +134,7 @@ export default function Articles() {
                                                 {article.title}
                                             </Card.Title>
 
-                                            <div className="mb-3" style={{ fontSize: '0.85rem', color: 'v' }}>
+                                            <div className="mb-3" style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                                                 <i className="bi bi-calendar3 me-2"></i>
                                                 {article.date} · {article.readTime}
                                             </div>

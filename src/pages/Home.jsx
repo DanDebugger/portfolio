@@ -2,6 +2,7 @@ import '../App.css'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import GalaxyBackground from '../components/GalaxyBackground'
+import Testimonials from '../components/Testimonials'
 
 export default function Home() {
   const roles = ['Frontend', 'Backend', 'Fullstack', 'Game']
@@ -229,6 +230,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+      <Testimonials />
     </main>
   )
 }
