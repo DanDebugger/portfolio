@@ -1,6 +1,7 @@
 import '../App.css'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import GalaxyBackground from '../components/GalaxyBackground'
 
 export default function Home() {
   const roles = ['Frontend', 'Backend', 'Fullstack', 'Game']
@@ -62,9 +63,10 @@ export default function Home() {
 
   return (
     <main style={{ paddingTop: '80px' }}>
+      <GalaxyBackground />
       <section className="py-5 hero-section">
-        <motion.div 
-          className="container position-relative" 
+        <motion.div
+          className="container position-relative"
           style={{ zIndex: 1 }}
           variants={containerVariants}
           initial="hidden"
@@ -72,25 +74,26 @@ export default function Home() {
         >
           <div className="row align-items-center">
             <div className="col-md-7">
-              <motion.div 
+              <motion.div
                 className="hero-pill mb-3"
                 variants={itemVariants}
               >
-                <span className="text-primary-emphasis">Available for work</span>
+                <span style={{ color: 'var(--primary)' }}>Available for work</span>
               </motion.div>
-              <motion.p 
-                className="text-uppercase text-muted mb-2"
+              <motion.p
+                className="text-uppercase mb-2"
+                style={{ color: 'var(--text-muted)' }}
                 variants={itemVariants}
               >
                 Hello, I'm
               </motion.p>
-              <motion.h1 
+              <motion.h1
                 className="hero-title fw-bold mb-2"
                 variants={itemVariants}
               >
                 <span className="hero-highlight">Dangrey D. Concepcion</span>
               </motion.h1>
-              <motion.h2 
+              <motion.h2
                 className="hero-subtitle mb-3"
                 variants={itemVariants}
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}
@@ -111,34 +114,45 @@ export default function Home() {
                 </span>
                 <span>Developer</span>
               </motion.h2>
-              <motion.p 
-                className="lead mb-4 text-light-emphasis"
+              <motion.p
+                className="lead mb-4"
+                style={{ color: 'var(--text-secondary)' }}
                 variants={itemVariants}
               >
                 I build clean, responsive web applications with modern JavaScript, React, and great UX.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="d-flex flex-wrap gap-2 mb-4"
                 variants={itemVariants}
               >
-                <motion.a 
-                  href="/projects" 
-                  className="btn btn-primary shadow-sm"
+                <motion.a
+                  href="/projects"
+                  className="btn shadow-sm"
+                  style={{
+                    backgroundColor: 'var(--primary)',
+                    color: '#ffffff',
+                    border: 'none'
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   View Projects
                 </motion.a>
-                <motion.a 
-                  href="/contact" 
-                  className="btn btn-outline-light"
+                <motion.a
+                  href="/contact"
+                  className="btn"
+                  style={{
+                    backgroundColor: 'transparent',
+                    color: 'var(--text-primary)',
+                    border: '2px solid var(--border-strong)'
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Contact Me
                 </motion.a>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="hero-social"
                 variants={itemVariants}
               >
@@ -196,11 +210,11 @@ export default function Home() {
                 </a>
               </motion.div>
             </div>
-            <motion.div 
+            <motion.div
               className="col-md-5 mt-4 mt-md-0 text-center text-md-end"
               variants={itemVariants}
             >
-              <motion.div 
+              <motion.div
                 className="hero-image-wrapper"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
