@@ -36,37 +36,37 @@ export const testimonials = [
     },
     {
         id: 6,
-        name: "@david_backend",
-        role: "System Arch",
-        quote: "Scalable, secure, and robust. Dan builds backends that can handle anything.",
-        avatar: "https://randomuser.me/api/portraits/men/86.jpg"
+        name: "@david_cto",
+        role: "CTO",
+        quote: "Scalable coding practices and excellent documentation. A rare find in today's market.",
+        avatar: "https://randomuser.me/api/portraits/men/85.jpg"
     },
     {
         id: 7,
-        name: "@lisa_pm",
-        role: "Product Owner",
-        quote: "Delivered ahead of schedule and better than the spec. A true professional.",
-        avatar: "https://randomuser.me/api/portraits/women/12.jpg"
+        name: "@lisa_product",
+        role: "Project Lead",
+        quote: "Delivered ahead of schedule and better than the mockups. Highly recommended.",
+        avatar: "https://randomuser.me/api/portraits/women/55.jpg"
     },
     {
         id: 8,
-        name: "@tom_founder",
-        role: "CEO",
-        quote: "The ROI on this project was immediate. The user experience is world-class.",
-        avatar: "https://randomuser.me/api/portraits/men/62.jpg"
+        name: "@alex_frontend",
+        role: "Tech Lead",
+        quote: "His React components are reusable and robust. Learned a lot just from reviewing his PRs.",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
     },
     {
         id: 9,
-        name: "@anna_dev",
-        role: "Full Stack",
-        quote: "Learned so much just by reviewing his PRs. Clean, efficient, and modern code.",
+        name: "@sophia_founder",
+        role: "CEO",
+        quote: "Our user engagement increased by 40% after the redesign. The results speak for themselves.",
         avatar: "https://randomuser.me/api/portraits/women/33.jpg"
     },
     {
         id: 10,
-        name: "@james_design",
-        role: "Creative Dir",
-        quote: "He doesn't just code designs, he enhances them. The animations are buttery smooth.",
-        avatar: "https://randomuser.me/api/portraits/men/41.jpg"
+        name: "@ryan_devops",
+        role: "DevOps Engineer",
+        quote: "Seamless integration with our CI/CD pipelines. Knows his way around deployment infrastructure.",
+        avatar: "https://randomuser.me/api/portraits/men/29.jpg"
     }
 ];
