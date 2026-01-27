@@ -10,6 +10,8 @@ import Skills from './pages/Skills.jsx'
 import Projects from './pages/Projects.jsx'
 import Articles from './pages/Articles.jsx'
 import Contact from './pages/Contact.jsx'
+import AllTestimonials from './pages/AllTestimonials.jsx'
+import Tutorials from './pages/Tutorials.jsx'
 
 import StarsCanvas from './components/StarsCanvas.jsx'
 
@@ -25,6 +27,8 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/testimonials" element={<AllTestimonials />} />
+        <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
       <StarsCanvas />
     </Router>

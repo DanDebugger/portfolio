@@ -112,8 +112,8 @@ export default function Articles() {
                                             {/* Metadata */}
                                             <div className="d-flex justify-content-between align-items-center mb-3">
                                                 <div className="d-flex align-items-center gap-2">
-                                                    <i className="bi bi-person-circle" style={{ color: 'var(--text-muted)', fontSize: '1rem' }}></i>
-                                                    <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+                                                    <i className="bi bi-person-circle" style={{ color: '#ffffff', fontSize: '1rem' }}></i>
+                                                    <span style={{ fontSize: '0.85rem', color: '#ffffff', fontWeight: 500 }}>
                                                         {article.author}
                                                     </span>
                                                 </div>
@@ -134,13 +134,13 @@ export default function Articles() {
                                                 {article.title}
                                             </Card.Title>
 
-                                            <div className="mb-3" style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                                            <div className="mb-3" style={{ fontSize: '0.85rem', color: '#ffffff' }}>
                                                 <i className="bi bi-calendar3 me-2"></i>
                                                 {article.date} · {article.readTime}
                                             </div>
 
                                             <Card.Text style={{
-                                                color: 'var(--text-secondary)',
+                                                color: '#ffffff',
                                                 marginBottom: '1.5rem',
                                                 flex: 1,
                                                 fontSize: '0.95rem',
@@ -151,13 +151,10 @@ export default function Articles() {
 
                                             <div className="d-flex flex-wrap gap-2 mt-auto">
                                                 {article.tags.slice(1).map(tag => (
-                                                    <Badge key={tag} pill style={{
-                                                        background: 'rgba(243, 243, 244, 0.1)',
-                                                        color: 'var(--primary)',
-                                                        fontWeight: 600,
-                                                        border: '1px solid rgba(37, 99, 235, 0.2)',
+                                                    <Badge key={tag} pill bg="primary" className="text-white" style={{
                                                         padding: '0.5em 1em',
-                                                        fontSize: '0.75rem'
+                                                        fontSize: '0.75rem',
+                                                        fontWeight: 600
                                                     }}>
                                                         {tag}
                                                     </Badge>

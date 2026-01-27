@@ -41,16 +41,17 @@ export default function About() {
                   </h3>
                   <div className="row g-3">
                     {[
-                      { icon: 'bi-code-slash', name: 'React', color: '#61DAFB' },
-                      { icon: 'bi-filetype-js', name: 'JavaScript', color: '#F7DF1E' },
-                      { icon: 'bi-filetype-jsx', name: 'Next.js', color: '#000000' },
-                      { icon: 'bi-filetype-php', name: 'PHP', color: '#777BB4' },
-                      { icon: 'bi-database', name: 'MySQL', color: '#4479A1' },
-                      { icon: 'bi-filetype-html', name: 'HTML & CSS', color: '#E34F26' }
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg', name: 'Next.js' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', name: 'PHP' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', name: 'MySQL' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML5' },
+                      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS3' }
                     ].map((tech, idx) => (
-                      <div key={idx} className="col-6 col-md-4">
+                      <div key={idx} className="col-6 col-md-3">
                         <div
-                          className="tech-skill-card"
+                          className="tech-skill-card h-100"
                           style={{
                             background: 'var(--bg-card)',
                             border: '1px solid var(--border-subtle)',
@@ -75,20 +76,20 @@ export default function About() {
                             style={{
                               width: '60px',
                               height: '60px',
-                              borderRadius: '12px',
-                              background: `${tech.color}15`,
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              margin: '0 auto 1rem',
-                              border: `2px solid ${tech.color}30`
+                              margin: '0 auto 1rem'
                             }}
                           >
-                            <i
-                              className={`bi ${tech.icon}`}
+                            <img
+                              src={tech.img}
+                              alt={tech.name}
                               style={{
-                                fontSize: '2rem',
-                                color: tech.color
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                                filter: tech.name === 'Next.js' ? 'invert(1)' : 'none'
                               }}
                             />
                           </div>
@@ -96,7 +97,7 @@ export default function About() {
                             margin: 0,
                             color: 'var(--text-primary)',
                             fontWeight: 600,
-                            fontSize: '1rem'
+                            fontSize: '0.9rem'
                           }}>
                             {tech.name}
                           </h5>

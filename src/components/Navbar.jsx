@@ -36,10 +36,11 @@ export default function NavbarComponent() {
         backgroundColor: 'var(--bg-navbar)',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid var(--border-subtle)',
-        boxShadow: 'var(--shadow-sm)'
+        boxShadow: 'var(--shadow-sm)',
+        zIndex: 1050
       }}
     >
-      <Container>
+      <Container className="position-relative">
         <NavbarBrand as={Link} to="/" className="d-flex align-items-center gap-2">
           <div className="brand-logo">
             <span>DC</span>
@@ -64,6 +65,7 @@ export default function NavbarComponent() {
             <Nav.Link as={Link} to="/skills">Skills</Nav.Link>
             <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
             <Nav.Link as={Link} to="/articles">Articles</Nav.Link>
+            <Nav.Link as={Link} to="/tutorials">Tutorials</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           </Nav>
           <div className="d-none d-lg-flex align-items-center gap-3">
