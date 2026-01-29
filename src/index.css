@@ -1,58 +1,6 @@
 :root {
   /* =========================================
-     DESIGN TOKENS - LIGHT THEME (Default)
-     ========================================= */
-
-  /* Backgrounds */
-  --bg-primary: #f8fafc;
-  /* Main background - slightly cool gray */
-  --bg-secondary: #f1f5f9;
-  /* Secondary sections */
-  --bg-card: #ffffff;
-  /* Cards / Containers */
-  --bg-navbar: rgba(255, 255, 255, 0.85);
-  /* Glassmorphism base */
-
-  /* Text */
-  --text-primary: #0f172a;
-  /* Slate 900 - High contrast */
-  --text-secondary: #1e293b;
-  /* Slate 800 - Darker for better readability */
-  --text-muted: #475569;
-  /* Slate 600 - Darker for metadata */
-  --text-inverse: #ffffff;
-
-  /* Accents (Brand: Electric Blue) */
-  --primary: #2563eb;
-  /* Blue 600 */
-  --primary-hover: #1d4ed8;
-  /* Blue 700 */
-  --primary-foreground: #ffffff;
-
-  /* Borders & Dividers */
-  --border-subtle: #e2e8f0;
-  /* Slate 200 */
-  --border-strong: #cbd5e1;
-  /* Slate 300 */
-
-  /* Effects */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
-  /* Subtle blue glow */
-
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-
-  /* Gradients */
-  --gradient-main: linear-gradient(135deg, #eff6ff 0%, #f1f5f9 100%);
-}
-
-body.dark-mode {
-  /* =========================================
-     DESIGN TOKENS - DARK THEME (Deep Space)
+     DESIGN TOKENS - GALAXY THEME (Permanent Dark)
      ========================================= */
 
   /* Backgrounds */
@@ -71,12 +19,14 @@ body.dark-mode {
   /* Slate 300 - High readability */
   --text-muted: #64748b;
   /* Slate 500 */
+  --text-inverse: #0f172a;
 
   /* Accents (Brand: Neon Blue) */
   --primary: #3b82f6;
   /* Blue 500 - Brighter for dark mode */
   --primary-hover: #60a5fa;
   /* Blue 400 */
+  --primary-foreground: #ffffff;
 
   /* Borders */
   --border-subtle: #334155;

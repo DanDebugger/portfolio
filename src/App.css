@@ -35,59 +35,66 @@ section {
 }
 
 .navbar-nav .nav-link {
-  color: var(--text-secondary) !important;
+  color: var(--text-primary) !important;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* Better readability */
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--primary) !important;
+  text-shadow: 0 0 8px var(--primary), 0 0 15px var(--primary);
 }
 
 /* Active indicator dot */
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0px;
+  bottom: 5px;
   left: 50%;
   width: 0;
   height: 2px;
   background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
   transition: all 0.3s ease;
   transform: translateX(-50%);
   border-radius: 99px;
+  opacity: 0;
 }
 
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
-  width: 20px;
+  width: 25px;
+  opacity: 1;
 }
 
 .brand-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  /* Slightly squircle */
-  background: var(--bg-card);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
-  font-size: 1rem;
+  color: var(--primary);
+  font-size: 1.1rem;
   font-weight: 800;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-subtle);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
 }
 
 .brand-logo:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: var(--shadow-glow);
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 0 25px var(--primary);
   background: var(--bg-card);
   border-color: var(--primary);
-  color: var(--primary);
+  color: #fff;
+  text-shadow: 0 0 10px var(--primary);
 }
 
 /* =========================================
@@ -680,4 +687,19 @@ section {
 .reveal {
   opacity: 0;
   animation: fadeUp 0.8s ease-out forwards;
+}
+
+@media (min-width: 992px) {
+  .nav-center-desktop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    padding: 0;
+    width: auto;
+    /* Ensure it behaves as a row inside the absolute container */
+    flex-direction: row !important;
+    justify-content: center;
+  }
 }

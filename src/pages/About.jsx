@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import '../App.css'
 
 export default function About() {
@@ -127,13 +128,13 @@ export default function About() {
                       <span>github.com/DanDebugger</span>
                     </a>
                     <a
-                      href="https://instagram.com/your-instagram"
+                      href="https://www.instagram.com/dangrey_dc/"
                       target="_blank"
                       rel="noreferrer"
                       className="about-link-item reveal reveal-delay-3"
                     >
                       <i className="bi bi-instagram" />
-                      <span>@your-instagram</span>
+                      <span>@dangrey_dc</span>
                     </a>
                   </div>
                 </div>
@@ -142,15 +143,47 @@ export default function About() {
 
             <div className="col-lg-5 d-flex justify-content-center justify-content-lg-end">
               <div className="about-avatar-wrapper reveal">
-                <img
-                  src="/images/profile.jpg"
-                  alt="Dangrey D. Concepcion"
-                  className="about-avatar"
-                  onError={(e) => {
-                    e.target.onerror = null; // Prevent infinite loop
-                    e.target.src = 'https://ui-avatars.com/api/?name=Dangrey+Concepcion&background=2563eb&color=fff&size=400';
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.05, rotate: 0 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.02 }}
+                  style={{
+                    borderRadius: '2rem',
+                    overflow: 'hidden',
+                    border: '4px solid var(--bg-card)',
+                    boxShadow: 'var(--shadow-lg)',
+                    position: 'relative',
+                    background: 'var(--bg-card)'
                   }}
-                />
+                >
+                  <img
+                    src="/images/profile.png"
+                    alt="Dangrey D. Concepcion"
+                    className="about-avatar"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      objectFit: 'cover'
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://ui-avatars.com/api/?name=Dangrey+Concepcion&background=3b82f6&color=fff&size=500&font-size=0.33';
+                    }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '2rem',
+                    pointerEvents: 'none'
+                  }} />
+                </motion.div>
               </div>
             </div>
           </div>

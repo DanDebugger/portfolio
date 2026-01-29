@@ -4,15 +4,14 @@ import { Navbar, NavbarBrand, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function NavbarComponent() {
+  const { theme, toggleTheme } = useTheme();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show navbar when scrolling up, hide when scrolling down
       if (currentScrollY < lastScrollY || currentScrollY < 10) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -41,25 +40,18 @@ export default function NavbarComponent() {
       }}
     >
       <Container className="position-relative">
-        <NavbarBrand as={Link} to="/" className="d-flex align-items-center gap-2">
+        <NavbarBrand as={Link} to="/" className="d-flex align-items-center gap-2 z-2">
           <div className="brand-logo">
             <span>DC</span>
           </div>
         </NavbarBrand>
-        <div className="d-flex align-items-center gap-2 ms-auto d-lg-none">
-          <Button
-            variant="link"
-            onClick={toggleTheme}
-            className="p-1 text-decoration-none"
-            style={{ color: 'var(--text-primary)' }}
-            aria-label="Toggle Dark Mode"
-          >
-            <i className={`bi ${theme === 'dark' ? 'bi-sun-fill' : 'bi-moon-fill'} fs-5`}></i>
-          </Button>
+        <div className="d-flex align-items-center gap-2 ms-auto d-lg-none z-2">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto d-flex align-items-center gap-2 gap-lg-0 my-3 my-lg-0">
+          {/* Center Links Container */}
+          {/* Center Links Container - Absolute Center on Desktop, Stacked on Mobile */}
+          <Nav className="nav-center-desktop gap-4 my-3 my-lg-0 align-items-center">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/skills">Skills</Nav.Link>
@@ -68,16 +60,7 @@ export default function NavbarComponent() {
             <Nav.Link as={Link} to="/tutorials">Tutorials</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           </Nav>
-          <div className="d-none d-lg-flex align-items-center gap-3">
-            <Button
-              variant="link"
-              onClick={toggleTheme}
-              className="p-1 text-decoration-none"
-              style={{ color: 'var(--text-primary)' }}
-              aria-label="Toggle Dark Mode"
-            >
-              <i className={`bi ${theme === 'dark' ? 'bi-sun-fill' : 'bi-moon-fill'} fs-5`}></i>
-            </Button>
+          <div className="d-none d-lg-flex align-items-center gap-3 ms-auto z-2">
             <Nav.Link as={Link} to="/contact" className="p-0">
               <Button style={{
                 backgroundColor: 'var(--primary)',

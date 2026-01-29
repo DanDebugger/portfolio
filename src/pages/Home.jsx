@@ -167,7 +167,7 @@ export default function Home() {
                   <i className="bi bi-github" />
                 </a>
                 <a
-                  href="https://instagram.com/your-instagram"
+                  href="https://www.instagram.com/dangrey_dc/"
                   target="_blank"
                   rel="noreferrer"
                   className="social-icon"
@@ -221,7 +221,7 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/images/Profile.jpg"
+                  src="/images/profile.png"
                   alt="Dangrey D. Concepcion"
                   className="hero-image"
                 />
