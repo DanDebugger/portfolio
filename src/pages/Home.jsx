@@ -185,7 +185,7 @@ export default function Home() {
                   <i className="bi bi-facebook" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/your-linkedin"
+                  href="https://www.linkedin.com/in/dangrey-concepcion-967871379"
                   target="_blank"
                   rel="noreferrer"
                   className="social-icon"
@@ -194,7 +194,7 @@ export default function Home() {
                   <i className="bi bi-linkedin" />
                 </a>
                 <a
-                  href="https://twitter.com/your-twitter"
+                  href="https://x.com/DangreyC87967"
                   target="_blank"
                   rel="noreferrer"
                   className="social-icon"
@@ -221,7 +221,7 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/images/profile.png"
+                  src="/images/profile copy.jpg"
                   alt="Dangrey D. Concepcion"
                   className="hero-image"
                 />

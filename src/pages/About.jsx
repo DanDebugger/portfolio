@@ -147,11 +147,8 @@ export default function About() {
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  whileHover={{ scale: 1.05, rotate: 0 }}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.05 }}
+
                   style={{
                     borderRadius: '2rem',
                     overflow: 'hidden',
@@ -162,7 +159,7 @@ export default function About() {
                   }}
                 >
                   <img
-                    src="/images/profile.png"
+                    src="/images/profile copy.jpg"
                     alt="Dangrey D. Concepcion"
                     className="about-avatar"
                     style={{
