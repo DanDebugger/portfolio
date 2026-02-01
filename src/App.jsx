@@ -32,7 +32,7 @@ function App() {
         <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
       <StarsCanvas />
-      <EnquiryBot />
+      {/* <EnquiryBot /> */}
     </Router>
   )
 }
