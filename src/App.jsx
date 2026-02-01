@@ -12,8 +12,9 @@ import Articles from './pages/Articles.jsx'
 import Contact from './pages/Contact.jsx'
 import AllTestimonials from './pages/AllTestimonials.jsx'
 import Tutorials from './pages/Tutorials.jsx'
-import { Sandpack } from "@codesandbox/sandpack-react";
+
 import StarsCanvas from './components/StarsCanvas.jsx'
+import EnquiryBot from './components/Chatbot/EnquiryBot.jsx'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
       <StarsCanvas />
+      <EnquiryBot />
     </Router>
   )
 }
