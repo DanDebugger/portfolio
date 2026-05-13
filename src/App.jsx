@@ -3,7 +3,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
-import LoadingScreen from './components/LoadingScreen.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Skills from './pages/Skills.jsx'
@@ -19,7 +18,6 @@ import EnquiryBot from './components/Chatbot/EnquiryBot.jsx'
 function App() {
   return (
     <Router>
-      <LoadingScreen />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

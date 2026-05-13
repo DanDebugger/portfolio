@@ -1,11 +1,14 @@
 #root {
   width: 100%;
-  margin: 0;
   padding: 0;
   isolation: isolate;
   /* Create new stacking context */
   position: relative;
   z-index: 1;
+
+  /* Typography System */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
 }
 
 main {
@@ -14,6 +17,31 @@ main {
   min-height: 100vh;
   position: relative;
   z-index: 10;
+  font-family: var(--font-body);
+}
+
+/* Typography Utilities */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.display-1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #facc15 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 section {
@@ -322,13 +350,24 @@ section {
 }
 
 .about-text-content {
-  background: var(--bg-card);
-  padding: 2rem;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2.5rem;
   border-radius: 1.5rem;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
   margin-bottom: 2rem;
   color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-text-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
 }
 
 .about-avatar-wrapper {
@@ -376,18 +415,34 @@ section {
 .project-card {
   height: 100%;
   border-radius: 1.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow), 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card .card-body {

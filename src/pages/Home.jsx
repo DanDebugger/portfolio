@@ -221,7 +221,7 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/images/profile copy.jpg"
+                  src="/images/profile 1.png"
                   alt="Dangrey D. Concepcion"
                   className="hero-image"
                 />
