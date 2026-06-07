@@ -127,7 +127,7 @@ export default function Home() {
                 variants={itemVariants}
               >
                 <motion.a
-                  href="/projects"
+                  href="/Projects"
                   className="btn shadow-sm"
                   style={{
                     backgroundColor: 'var(--primary)',
@@ -140,7 +140,7 @@ export default function Home() {
                   View Projects
                 </motion.a>
                 <motion.a
-                  href="/contact"
+                  href="/Contact"
                   className="btn"
                   style={{
                     backgroundColor: 'transparent',
