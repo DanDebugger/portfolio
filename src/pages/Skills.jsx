@@ -2,9 +2,11 @@ import { useRef, useMemo } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import {
   SiReact, SiJavascript, SiNextdotjs, SiPhp, SiMysql,
-  SiHtml5, SiCss3, SiVuedotjs, SiRust, SiMongodb, SiEthereum
+  SiHtml5, SiCss3, SiRust, SiEthereum, SiPython, SiCplusplus,
+  SiTypescript, SiSupabase, SiSolana, SiSolidity, SiStellar, SiSui
 } from 'react-icons/si'
 import { FaCode } from 'react-icons/fa'
+import { TbBrandCSharp } from 'react-icons/tb'
 import SectionWrapper from '../components/SectionWrapper'
 import '../App.css'
 
@@ -23,17 +25,25 @@ export default function Skills() {
   const opacity = useTransform(scrollYProgress, [0, 0.05], [0, 1])
 
   const technologies = useMemo(() => [
-    { id: 1, name: 'React', icon: SiReact, iconColor: '#61DAFB', category: 'Frontend', description: 'Component-based library for building user interfaces' },
-    { id: 2, name: 'JavaScript', icon: SiJavascript, iconColor: '#F7DF1E', category: 'Language', description: 'Programming language for web development' },
-    { id: 3, name: 'Next.js', icon: SiNextdotjs, iconColor: '#000000', category: 'Frontend', description: 'React framework for production-ready applications' },
-    { id: 4, name: 'PHP', icon: SiPhp, iconColor: '#777BB4', category: 'Backend', description: 'Server-side scripting language' },
-    { id: 5, name: 'MySQL', icon: SiMysql, iconColor: '#4479A1', category: 'Database', description: 'Relational database management system' },
-    { id: 6, name: 'HTML & CSS', icon: SiHtml5, iconColor: '#E34F26', category: 'Frontend', description: 'Markup and styling languages for web pages', secondaryIcon: SiCss3, secondaryIconColor: '#1572B6' },
-    { id: 7, name: 'Vue', icon: SiVuedotjs, iconColor: '#4FC08D', category: 'Frontend', description: 'Progressive JavaScript framework' },
-    { id: 8, name: 'Rust', icon: SiRust, iconColor: '#000000', category: 'Language', description: 'Systems programming language focused on safety' },
-    { id: 9, name: 'Motoko', icon: FaCode, iconColor: '#2563eb', category: 'Language', description: 'Language for Internet Computer blockchain' },
-    { id: 10, name: 'MongoDB', icon: SiMongodb, iconColor: '#47A248', category: 'Database', description: 'NoSQL document database' },
-    { id: 11, name: 'Ethereum', icon: SiEthereum, iconColor: '#627EEA', category: 'Blockchain', description: 'Decentralized blockchain platform' }
+    { id: 1, name: 'HTML & CSS', icon: SiHtml5, iconColor: '#E34F26', category: 'Frontend', description: 'Core markup and styling languages for web pages', secondaryIcon: SiCss3, secondaryIconColor: '#1572B6' },
+    { id: 2, name: 'JavaScript', icon: SiJavascript, iconColor: '#F7DF1E', category: 'Language', description: 'Dynamic scripting language powering interactive web applications' },
+    { id: 3, name: 'PHP', icon: SiPhp, iconColor: '#777BB4', category: 'Backend', description: 'Server-side scripting language for dynamic content generation' },
+    { id: 4, name: 'MySQL', icon: SiMysql, iconColor: '#4479A1', category: 'Database', description: 'Popular open-source relational database management system' },
+    { id: 5, name: 'Python', icon: SiPython, iconColor: '#3776AB', category: 'Language', description: 'High-level language for scripting, automation, backend, and AI' },
+    { id: 6, name: 'C#', icon: TbBrandCSharp, iconColor: '#239120', category: 'Language', description: "Microsoft's multi-paradigm language for enterprise apps and game dev" },
+    { id: 7, name: 'C++', icon: SiCplusplus, iconColor: '#00599C', category: 'Language', description: 'High-performance systems programming language' },
+    { id: 8, name: 'React', icon: SiReact, iconColor: '#00d8ff', category: 'Frontend', description: 'Declarative component-based library for building user interfaces' },
+    { id: 9, name: 'TypeScript', icon: SiTypescript, iconColor: '#3178C6', category: 'Language', description: 'Strict typed superset of JavaScript for scalable app development' },
+    { id: 10, name: 'Next.js', icon: SiNextdotjs, iconColor: '#000000', category: 'Frontend', description: 'React framework with server-side rendering and static generation' },
+    { id: 11, name: 'Supabase', icon: SiSupabase, iconColor: '#3ECF8E', category: 'Database', description: 'Open-source Firebase alternative providing database, auth, and storage' },
+    { id: 12, name: 'Rust', icon: SiRust, iconColor: '#E05D44', category: 'Language', description: 'Safe systems language emphasizing memory safety and speed' },
+    { id: 13, name: 'Move Language', icon: FaCode, iconColor: '#000000', category: 'Blockchain', description: 'Safe smart contract programming language developed for the Sui blockchain' },
+    { id: 14, name: 'Sui', icon: SiSui, iconColor: '#00A3E0', category: 'Blockchain', description: 'Next-generation smart contract platform with a builder-friendly object model' },
+    { id: 15, name: 'Solana', icon: SiSolana, iconColor: '#00b894', category: 'Blockchain', description: 'High-performance network supporting scalable decentralized apps' },
+    { id: 16, name: 'Motoko', icon: FaCode, iconColor: '#F15A24', category: 'Blockchain', description: 'Smart contract language tailored for the Internet Computer protocol' },
+    { id: 17, name: 'Ethereum', icon: SiEthereum, iconColor: '#627EEA', category: 'Blockchain', description: 'Decentralized blockchain platform for smart contracts and dApps' },
+    { id: 18, name: 'Stellar', icon: SiStellar, iconColor: '#000000', category: 'Blockchain', description: 'Decentralized protocol designed for fast, low-cost cross-border payments' },
+    { id: 19, name: 'Solidity', icon: SiSolidity, iconColor: '#363636', category: 'Blockchain', description: 'EVM-native language for writing secure smart contracts' }
   ], [])
 
   const TechCard = ({ tech, isEven }) => {

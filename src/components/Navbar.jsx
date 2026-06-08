@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function NavbarComponent() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
